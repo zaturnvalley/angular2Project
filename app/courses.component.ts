@@ -11,9 +11,14 @@ import {CourseService} from './course.service'
         {{ course }}
         </li>
       </ul>
-      `
+      `,
+  providers: [CourseService]
 })
 export class CoursesComponent {
   title = 'The title of the courses page';
   courses;
+
+  constructor(courseService: CourseService){
+      this.courses = courseService.getCourses();
+  }
 }
