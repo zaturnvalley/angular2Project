@@ -23,11 +23,12 @@ System.register(['angular2/core', './courses.component'], function(exports_1, co
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.isActive = false;
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>Hello Angular 2</h1><courses></courses>',
+                        template: "\n        <h1>Hello Angular 2</h1><courses></courses>\n        <button class=\"btn btn-primary\" [class.active]=\"isActive\">Submit</button>\n    ",
                         directives: [courses_component_1.CoursesComponent]
                     }), 
                     __metadata('design:paramtypes', [])
