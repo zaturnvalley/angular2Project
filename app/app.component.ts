@@ -5,10 +5,13 @@ import {CoursesComponent} from './courses.component'
     selector: 'my-app',
     template: `
         <h1>Hello Angular 2</h1><courses></courses>
-        <button class="btn btn-primary" [class.active]="isActive">Submit</button>
+        <button (click)="onClick()">Submit</button>
+        <button on-click="onClick()">Submit</button>
     `,
     directives: [CoursesComponent]
 })
 export class AppComponent { 
-  isActive = false;
+  onClick(){
+    console.log('yes');
+  }
 }
