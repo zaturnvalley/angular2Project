@@ -24,13 +24,17 @@ System.register(['angular2/core', './courses.component'], function(exports_1, co
             AppComponent = (function () {
                 function AppComponent() {
                 }
-                AppComponent.prototype.onClick = function () {
-                    console.log('yes');
+                AppComponent.prototype.onDivClick = function () {
+                    console.log('handled by div');
+                };
+                AppComponent.prototype.onClick = function ($event) {
+                    $event.stopPropagation();
+                    console.log('yes', $event);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hello Angular 2</h1><courses></courses>\n        <button (click)=\"onClick()\">Submit</button>\n        <button on-click=\"onClick()\">Submit</button>\n    ",
+                        template: "\n        <h1>Hello Angular 2</h1><courses></courses>\n        <div (click)=\"onDivClick()\">\n          <button (click)=\"onClick($event)\">Submit</button>\n        </div>\n    ",
                         directives: [courses_component_1.CoursesComponent]
                     }), 
                     __metadata('design:paramtypes', [])
