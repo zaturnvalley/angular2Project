@@ -35,7 +35,7 @@ System.register(['angular2/core', './courses.component'], function(exports_1, co
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Hello Angular 2</h1><courses></courses>\n        <div (click)=\"onDivClick()\">\n          <button (click)=\"onClick($event)\">Submit</button>\n        </div>\n        <input type='button' (click)=\"title = ''\" value=\"Clear\"/>\n        <input type='text' [(ngModel)]=\"title\" />\n        <input type='text' bindon-ngModel=\"title\" />\n        <input type='text' [value]=\"title\" (input)=\"title = $event.target.value\" />\n        Preview: {{ title }}\n    ",
+                        template: "\n        <h1>Hello Angular 2</h1><courses></courses>\n        <div (click)=\"onDivClick()\">\n          <button (click)=\"onClick($event)\">Submit</button>\n        </div>\n        <input type='button' (click)=\"title = ''\" value=\"Clear\"/>\n        <input type='text' [(ngModel)]=\"title\" />\n        Preview: {{ title }}\n    ",
                         directives: [courses_component_1.CoursesComponent]
                     }), 
                     __metadata('design:paramtypes', [])
