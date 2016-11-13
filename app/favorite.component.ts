@@ -12,5 +12,9 @@ import {Component} from 'angular2/core';
   `
 })
 export class FavoriteComponent {
+    isFavorite = false;
 
+    onClick(){
+      this.isFavorite = !this.isFavorite;
+    }
 }
