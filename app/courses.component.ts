@@ -13,7 +13,6 @@ import {CourseService} from './course.service'
         {{ course }}
         </li>
       </ul>
-      <i />
       `,
   providers: [CourseService]
 })
