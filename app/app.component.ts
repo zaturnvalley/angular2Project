@@ -8,10 +8,16 @@ import {CoursesComponent} from './courses.component'
         <div (click)="onDivClick()">
           <button (click)="onClick($event)">Submit</button>
         </div>
+        <input type='button' (click)="title = ''" value="Clear"/>
+        <input type='text' [(ngModel)]="title" />
+        <input type='text' bindon-ngModel="title" />
+        <input type='text' [value]="title" (input)="title = $event.target.value" />
+        Preview: {{ title }}
     `,
     directives: [CoursesComponent]
 })
 export class AppComponent { 
+  title = 'Angular App'
   onDivClick() {
     console.log('handled by div');
   }
