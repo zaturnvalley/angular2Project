@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/core';
+import {Component} from 'angular2/core';
 
 @Component({
   selector: 'favorite',
@@ -9,10 +9,11 @@ import {Component, Input} from 'angular2/core';
       [class.glyphicon-star]="isFavorite"
       (click)="onClick()">
   </i>
-  `
+  `,
+  inputs: ['isFavorite']
 })
 export class FavoriteComponent {
-    @Input() isFavorite = false;
+    isFavorite = false;
 
     onClick(){
       this.isFavorite = !this.isFavorite;
