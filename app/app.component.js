@@ -27,6 +27,10 @@ System.register(['angular2/core', './courses.component', './favorite.component']
             AppComponent = (function () {
                 function AppComponent() {
                     this.title = 'Angular App';
+                    this.post = {
+                        title: 'Title',
+                        isFavorite: true
+                    };
                 }
                 AppComponent.prototype.onDivClick = function () {
                     console.log('handled by div');
@@ -38,7 +42,7 @@ System.register(['angular2/core', './courses.component', './favorite.component']
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <favorite></favorite>\n        <h1>Hello Angular 2</h1><courses></courses>\n        <div (click)=\"onDivClick()\">\n          <button (click)=\"onClick($event)\">Submit</button>\n        </div>\n        <input type='button' (click)=\"title = ''\" value=\"Clear\"/>\n        <input type='text' [(ngModel)]=\"title\" />\n        Preview: {{ title }}\n    ",
+                        template: "\n        <favorite [isFavorite]=\"post.isFavorite\"></favorite>\n        <h1>Hello Angular 2</h1><courses></courses>\n        <div (click)=\"onDivClick()\">\n          <button (click)=\"onClick($event)\">Submit</button>\n        </div>\n        <input type='button' (click)=\"title = ''\" value=\"Clear\"/>\n        <input type='text' [(ngModel)]=\"title\" />\n        Preview: {{ title }}\n    ",
                         directives: [courses_component_1.CoursesComponent, favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])

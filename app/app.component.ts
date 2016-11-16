@@ -5,7 +5,7 @@ import {FavoriteComponent} from './favorite.component'
 @Component({
     selector: 'my-app',
     template: `
-        <favorite></favorite>
+        <favorite [isFavorite]="post.isFavorite"></favorite>
         <h1>Hello Angular 2</h1><courses></courses>
         <div (click)="onDivClick()">
           <button (click)="onClick($event)">Submit</button>
@@ -24,5 +24,9 @@ export class AppComponent {
   onClick($event){
     $event.stopPropagation();
     console.log('yes', $event);
+  }
+  post = {
+    title: 'Title',
+    isFavorite: true
   }
 }
